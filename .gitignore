@@ -19,3 +19,7 @@ vendor/*/build-*
 *.bridgesupport
 .build
 vendor/Pods
+vendor/Podfile.lock
+
+provisioning
+release
