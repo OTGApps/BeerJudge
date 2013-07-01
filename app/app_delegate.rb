@@ -23,10 +23,14 @@ class AppDelegate < ProMotion::Delegate
 
     flavor_wheel = FlavorWheel.new nav_bar: true
     srm = SRM.new nav_bar: true
-    analyzer = SRMAnalyzer.new nav_bar: true
     about = AboutScreen.new nav_bar: true
 
-    @nav_stack = open_tab_bar flavor_wheel, srm, analyzer, about
+    if Device.camera.rear? || Device.simulator?
+      analyzer = SRMAnalyzer.new nav_bar: true
+      @nav_stack = open_tab_bar flavor_wheel, srm, analyzer, about
+    else
+      @nav_stack = open_tab_bar flavor_wheel, srm, about
+    end
   end
 
   def application(application, openURL:url, sourceApplication:sourceApplication, annotation:annotation)
