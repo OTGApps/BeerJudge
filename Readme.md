@@ -13,6 +13,10 @@ This app is the perfect companion for you at beer competitions!
 
 <a href="http://click.linksynergy.com/fs-bin/stat?id=**BiWowje1A&offerid=146261&type=3&subid=0&tmpid=1826&RD_PARM1=https%253A%252F%252Fitunes.apple.com%252Fus%252Fapp%252Fbeer-judge%252Fid666120064%253Fmt%253D8%2526uo%253D4%2526partnerId%253D30" target="itunes_store"><img src="http://r.mzstatic.com/images/web/linkmaker/badge_appstore-lrg.gif" alt="Checkout Helper - Mohawk Apps, LLC" style="border: 0;"/></a>
 
+## Screenshots
+
+![Screenshot 1](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/1.png) ![Screenshot 2](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/2.png) ![Screenshot 3](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/3.png) ![Screenshot 4](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/4.png)
+
 ## How to run the app:
 
 1. You must have a valid license of RubyMotion.
