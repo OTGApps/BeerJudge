@@ -14,7 +14,7 @@ Motion::Project::App.setup do |app|
   app.interface_orientations = [:portrait, :portrait_upside_down]
   app.identifier = 'com.mohawkapps.BeerJudge'
   app.version = "1"
-  app.short_version = "0.0.1"
+  app.short_version = "1.0.0"
   app.frameworks += %w(AVFoundation CoreVideo CoreMedia ImageIO QuartzCore)
   app.prerendered_icon = true
   app.info_plist['APP_STORE_ID'] = 666120064
@@ -27,6 +27,7 @@ Motion::Project::App.setup do |app|
     pod 'FlurrySDK'
     pod 'Appirater'
     pod 'Harpy'
+    pod 'OpenInChrome'
     pod 'CMPopTipView', :podspec => 'vendor/specs/CMPopTip.podspec'
   end
 
