@@ -15,7 +15,7 @@ This app is the perfect companion for you at beer competitions!
 
 ## Screenshots
 
-![Screenshot 1](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/1.png) ![Screenshot 2](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/2.png) ![Screenshot 3](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/3.png) ![Screenshot 4](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/4.png)
+![Screenshot 1](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/1.png)&nbsp;![Screenshot 2](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/2.png)&nbsp;![Screenshot 3](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/3.png)&nbsp;![Screenshot 4](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/4.png)
 
 ## How to run the app:
 
