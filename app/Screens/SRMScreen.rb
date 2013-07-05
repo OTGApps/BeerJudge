@@ -47,7 +47,7 @@ class SRM < PM::Screen
       }
       @top_view_label = add UILabel.new, {
         frame: @top_view.frame,
-        text: "Touch Me!",
+        text: "Touch Below!",
         font: UIFont.boldSystemFontOfSize(UIFont.systemFontSize),
         textAlignment: UITextAlignmentCenter,
         background_color: UIColor.clearColor
@@ -82,6 +82,7 @@ class SRM < PM::Screen
         titleAlignment: UITextAlignmentCenter,
         textAlignment: UITextAlignmentCenter,
         preferredPointDirection: PointDirectionDown,
+        userInteractionEnabled: false
       }
       @srm_indicator.disableTapToDismiss = true
 
