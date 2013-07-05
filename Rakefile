@@ -22,6 +22,7 @@ Motion::Project::App.setup do |app|
     { 'CFBundleURLName' => 'com.mohawkapps.BeerJudge',
       'CFBundleURLSchemes' => ['beerjudge'] }
   ]
+  app.info_plist['UIRequiredDeviceCapabilities'] = ['still-camera']
 
   app.pods do
     pod 'FlurrySDK'
