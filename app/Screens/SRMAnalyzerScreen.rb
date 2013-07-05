@@ -171,8 +171,6 @@ class SRMAnalyzer < PM::Screen
       imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageSampleBuffer)
       image = UIImage.alloc.initWithData(imageData)
 
-      ap "Got new image: #{image}"
-
       cropped = image
                   .image_resized(self.live_preview.frame.size)
                   .crop(@target_area.frame)

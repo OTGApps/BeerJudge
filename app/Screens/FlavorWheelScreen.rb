@@ -14,7 +14,6 @@ class FlavorWheel < PM::Screen
       view.backgroundColor = UIColor.whiteColor
 
       wheel_size = Device.screen.height_for_orientation(:portrait) * 1.2
-      ap wheel_size
       @wheel = add UIImageView.alloc.initWithImage(UIImage.imageNamed("flavor_wheel.png")), {
         left: 10,
         top: 10,

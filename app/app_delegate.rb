@@ -37,8 +37,6 @@ class AppDelegate < ProMotion::Delegate
     NSLog("Launched with URL: %@", url.absoluteString)
     suffix = url.absoluteString.split("//").last
 
-    ap tab_bar_controller
-    ap suffix
     case suffix
     when "flavor_wheel"
       @nav_stack.selectedIndex = 0
