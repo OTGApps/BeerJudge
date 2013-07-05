@@ -13,8 +13,8 @@ Motion::Project::App.setup do |app|
   app.device_family = [:iphone, :ipad]
   app.interface_orientations = [:portrait, :portrait_upside_down]
   app.identifier = 'com.mohawkapps.BeerJudge'
-  app.version = "1"
-  app.short_version = "1.0.0"
+  app.version = "2"
+  app.short_version = "1.0.1"
   app.frameworks += %w(AVFoundation CoreVideo CoreMedia ImageIO QuartzCore)
   app.prerendered_icon = true
   app.info_plist['APP_STORE_ID'] = 666120064

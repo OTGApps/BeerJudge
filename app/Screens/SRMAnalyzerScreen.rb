@@ -171,9 +171,7 @@ class SRMAnalyzer < PM::Screen
       imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageSampleBuffer)
       image = UIImage.alloc.initWithData(imageData)
 
-      cropped = image
-                  .image_resized(self.live_preview.frame.size)
-                  .crop(@target_area.frame)
+      cropped = image.image_resized(self.live_preview.frame.size).crop(@target_area.frame)
       self.captured_image_preview.image = cropped
 
       avg_color = cropped.averageColorAtPixel(CGPointMake(cropped.size.width, cropped.size.height), radius:(cropped.size.width / 2.0))
