@@ -1,10 +1,6 @@
 class DetailScreen < SizeableWebScreen
   attr_accessor :description, :search_string
 
-  def on_load
-    # self.setTitle self.title
-  end
-
   def on_appear
     super
     flurry_params = {off_flavor: self.title}
