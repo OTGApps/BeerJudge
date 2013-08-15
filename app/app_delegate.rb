@@ -23,7 +23,7 @@ class AppDelegate < ProMotion::Delegate
 
     flavor_wheel = FlavorWheel.new nav_bar: true
     srm = SRM.new nav_bar: true
-    about = AboutScreen.new nav_bar: true
+    about = AboutScreen.new nav_bar: true, external_links:true
 
     if Device.camera.rear? || Device.simulator?
       analyzer = SRMAnalyzer.new nav_bar: true
