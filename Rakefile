@@ -41,6 +41,8 @@ Motion::Project::App.setup do |app|
     app.vendor_project("vendor/#{v}", :static)
   end
 
+  app.files_dependencies 'app/Screens/DetailScreen.rb' => 'app/Screens/SizeableWebScreen.rb'
+
   app.development do
     app.entitlements['get-task-allow'] = true
     app.codesign_certificate = "iPhone Developer: Mark Rickert (YA2VZGDX4S)"

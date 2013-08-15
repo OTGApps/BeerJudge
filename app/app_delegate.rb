@@ -21,15 +21,19 @@ class AppDelegate < ProMotion::Delegate
       Harpy.sharedInstance.checkVersion
     end
 
+    # Set initial font size (%)
+    App::Persistence['font_size'] = 100 if App::Persistence['font_size'].nil?
+
     flavor_wheel = FlavorWheel.new nav_bar: true
+    off_flavors = OffFlavorsScreen.new nav_bar: true
     srm = SRM.new nav_bar: true
     about = AboutScreen.new nav_bar: true, external_links:true
 
     if Device.camera.rear? || Device.simulator?
       analyzer = SRMAnalyzer.new nav_bar: true
-      @nav_stack = open_tab_bar flavor_wheel, srm, analyzer, about
+      @nav_stack = open_tab_bar flavor_wheel, off_flavors, srm, analyzer, about
     else
-      @nav_stack = open_tab_bar flavor_wheel, srm, about
+      @nav_stack = open_tab_bar flavor_wheel, off_flavors, srm, about
     end
   end
 
@@ -40,12 +44,14 @@ class AppDelegate < ProMotion::Delegate
     case suffix
     when "flavor_wheel"
       @nav_stack.selectedIndex = 0
-    when "srm_spectrum"
+    when "off_flavors"
       @nav_stack.selectedIndex = 1
-    when "srm_analyzer"
+    when "srm_spectrum"
       @nav_stack.selectedIndex = 2
-    when "about"
+    when "srm_analyzer"
       @nav_stack.selectedIndex = 3
+    when "about"
+      @nav_stack.selectedIndex = 4
     end
 
     true

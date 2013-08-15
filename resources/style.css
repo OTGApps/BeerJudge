@@ -1,0 +1,38 @@
+* {
+	font-family: Helvetica;
+	font-size: 14px;
+}
+
+h1 {
+	font-size: 18px;
+	margin: 3px 0px;
+}
+
+h2 {
+	font-size: 16px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	padding-top: 10px;
+}
+
+p {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+a:link, a:active, a:visited {
+	color: #007071;
+}
+
+div.pre {
+	font-family:courier new, courier, monospace;
+	font-size: 12px;
+	padding:0px;
+	margin:0px;
+}
+
+.center {
+	text-align: center;
+}
+
+.highlight { background-color: yellow }
