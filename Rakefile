@@ -41,7 +41,7 @@ Motion::Project::App.setup do |app|
     app.vendor_project("vendor/#{v}", :static)
   end
 
-  app.files_dependencies 'app/Screens/DetailScreen.rb' => 'app/Screens/SizeableWebScreen.rb'
+  app.files_dependencies 'app/Classes/DetailScreen.rb' => 'app/Classes/SizeableWebScreen.rb'
 
   app.development do
     app.entitlements['get-task-allow'] = true
