@@ -1,9 +1,9 @@
 class SRM < PM::Screen
 
   title "SRM Spectrum"
+  tab_bar_item icon: "tab_srm_spectrum", title: "SRM"
 
   def on_load
-    set_tab_bar_item icon: "tab_srm_spectrum", title: "SRM"
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack
   end
 

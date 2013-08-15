@@ -1,13 +1,13 @@
 class AboutScreen < PM::WebScreen
 
   title "About"
+  tab_bar_item icon: "tab_info", title: "About"
 
   def content
     "AboutScreen.html"
   end
 
   def on_load
-    set_tab_bar_item icon: "tab_info", title: "About"
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack
   end
 

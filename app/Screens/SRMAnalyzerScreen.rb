@@ -1,11 +1,11 @@
 class SRMAnalyzer < PM::Screen
 
   title "SRM Analyzer"
+  tab_bar_item icon: "tab_eyedropper", title: "Analyzer"
 
   attr_accessor :live_preview, :still_image_output, :captured_image_preview
 
   def on_load
-    set_tab_bar_item icon: "tab_eyedropper", title: "Analyzer"
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack
   end
 

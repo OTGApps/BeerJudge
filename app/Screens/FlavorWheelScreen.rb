@@ -1,9 +1,9 @@
 class FlavorWheel < PM::Screen
 
   title "Flavor Wheel"
+  tab_bar_item icon: "tab_flavor_wheel", title: "Flavor Wheel"
 
   def on_load
-    set_tab_bar_item icon: "tab_flavor_wheel", title: "Flavor Wheel"
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack
   end
 

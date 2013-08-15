@@ -1,11 +1,10 @@
 class OffFlavorsScreen < ProMotion::TableScreen
   title "Off Flavors"
+  tab_bar_item icon: "tab_bandaid", title: "Off Flavors"
   searchable
 
   def on_load
-    set_tab_bar_item icon: "tab_bandaid", title: "Off Flavors"
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack
-    self.navigationController.toolbar.barStyle = UIBarStyleBlack
+    self.navigationController.navigationBar.barStyle = self.navigationController.toolbar.barStyle = UIBarStyleBlack
   end
 
   def will_appear
