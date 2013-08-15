@@ -11,9 +11,17 @@ class DetailScreen < SizeableWebScreen
 <<-CONTENT
 #{css}
 #{js}
-#{self.description}
+#{formatted_description}
 #{search_js}
 CONTENT
+  end
+
+  def formatted_description
+    f_desc = ""
+    self.description.split("\n").each do |d|
+      f_desc << "<p>" << d << "</p>"
+    end
+    f_desc
   end
 
   def css
