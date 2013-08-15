@@ -13,8 +13,8 @@ Motion::Project::App.setup do |app|
   app.device_family = [:iphone, :ipad]
   app.interface_orientations = [:portrait, :portrait_upside_down]
   app.identifier = 'com.mohawkapps.BeerJudge'
-  app.version = "2"
-  app.short_version = "1.0.1"
+  app.version = "3"
+  app.short_version = "1.1.0"
   app.frameworks += %w(AVFoundation CoreVideo CoreMedia ImageIO QuartzCore)
   app.prerendered_icon = true
   app.info_plist['APP_STORE_ID'] = 666120064
@@ -46,7 +46,7 @@ Motion::Project::App.setup do |app|
   app.development do
     app.entitlements['get-task-allow'] = true
     app.codesign_certificate = "iPhone Developer: Mark Rickert (YA2VZGDX4S)"
-    app.provisioning_profile = "./provisioning/development.mobileprovision"
+    app.provisioning_profile = "./provisioning/WildcardDevelopment.mobileprovision"
   end
 
   app.release do
