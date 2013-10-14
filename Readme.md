@@ -31,3 +31,6 @@ This app is the perfect companion for you at beer competitions!
 3. Send me a pull request.
 
 *I also like it when people who can't contribute [open an issue](https://github.com/markrickert/BeerJudge/issues)*
+
+---
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/MohawkApps/beerjudge/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
