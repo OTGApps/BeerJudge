@@ -6,6 +6,10 @@ class AboutViewController < Formotion::FormController
     self.tabBarItem.setTitle("About")
     self.tabBarItem.setImage(UIImage.imageNamed('tab_about'))
 
+    if Device.ipad?
+      self.navigationItem.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemStop, target:self, action:"close")
+    end
+
     Flurry.logEvent "AboutView" unless Device.simulator?
   end
 
@@ -104,6 +108,10 @@ class AboutViewController < Formotion::FormController
     this_year = Time.now.year
 
     start_year == this_year ? this_year : "#{start_year}-#{this_year}"
+  end
+
+  def close
+    dismissModalViewControllerAnimated(true)
   end
 
 end

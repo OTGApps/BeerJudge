@@ -1,7 +1,11 @@
-class OffFlavorsScreen < ProMotion::TableScreen
+class OffFlavorsScreen < MasterTableScreen
   title "Common Off Flavors"
   tab_bar_item icon: "tab_bandaid", title: "Off Flavors"
   searchable
+
+  def on_load
+    super
+  end
 
   def will_appear
     @will_appear_done ||= begin

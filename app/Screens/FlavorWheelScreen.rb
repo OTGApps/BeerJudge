@@ -1,4 +1,4 @@
-class FlavorWheel < PM::Screen
+class FlavorWheel < MasterScreen
 
   title "Flavor Wheel"
   tab_bar_item icon: "tab_flavor_wheel", title: "Flavor Wheel"

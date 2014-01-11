@@ -1,4 +1,4 @@
-class SRMAnalyzer < PM::Screen
+class SRMAnalyzer < MasterScreen
 
   title "SRM Analyzer"
   tab_bar_item icon: "tab_eyedropper", title: "Analyzer"
@@ -6,6 +6,7 @@ class SRMAnalyzer < PM::Screen
   attr_accessor :live_preview, :still_image_output, :captured_image_preview
 
   def on_load
+    super
     self.navigationController.navigationBar.translucent = false
     self.automaticallyAdjustsScrollViewInsets = false
     self.edgesForExtendedLayout = UIRectEdgeNone

@@ -1,5 +1,6 @@
 class AppDelegate < ProMotion::Delegate
 
+  attr_accessor :about
   tint_color "#581A27".to_color
 
   def on_load(app, options)
@@ -32,7 +33,8 @@ class AppDelegate < ProMotion::Delegate
     analyzer = SRMAnalyzer.new nav_bar: true
 
     about_vc = AboutViewController.alloc.init
-    about = UINavigationController.alloc.initWithRootViewController(about_vc)
+    self.about = UINavigationController.alloc.initWithRootViewController(about_vc)
+    self.about.modalPresentationStyle = UIModalPresentationFormSheet
 
     vcs = [flavor_wheel, off_flavors, srm]
     vcs << analyzer if Device.camera.rear? || Device.simulator?
@@ -55,8 +57,6 @@ class AppDelegate < ProMotion::Delegate
       @nav_stack.selectedIndex = 2
     when "srm_analyzer"
       @nav_stack.selectedIndex = 3
-    when "about"
-      @nav_stack.selectedIndex = 4
     end
 
     true
