@@ -17,15 +17,9 @@ module Formotion
 
         set_image
 
-        observe(self.row, "value") do |old_value, new_value|
-          break_with_semaphore do
-            set_pin
-          end
-        end
-
         @image_view.tag = IMAGE_VIEW_TAG
         @image_view.contentMode = UIViewContentModeScaleAspectFit
-        @image_view.backgroundColor = UIColor.clearColor
+        @image_view.backgroundColor = UIColor.whiteColor
         cell.addSubview(@image_view)
 
         cell.swizzle(:layoutSubviews) do
@@ -37,9 +31,9 @@ module Formotion
 
             field_frame = formotion_field.frame
             field_frame.origin.y = 10
-            field_frame.origin.x = self.textLabel.frame.origin.x + self.textLabel.frame.size.width + Formotion::RowType::Base.field_buffer
-            field_frame.size.width  = self.frame.size.width - field_frame.origin.x - Formotion::RowType::Base.field_buffer
-            field_frame.size.height = self.frame.size.height - Formotion::RowType::Base.field_buffer
+            field_frame.origin.x = self.textLabel.frame.origin.x + self.textLabel.frame.size.width + 20
+            field_frame.size.width  = self.frame.size.width - field_frame.origin.x - 20
+            field_frame.size.height = self.frame.size.height - 20
             formotion_field.frame = field_frame
           end
         end
