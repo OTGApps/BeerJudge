@@ -35,7 +35,10 @@ class SRM
 	}
 
 	def self.color(value)
-		BubbleWrap.rgb_color(@@matrix[value.to_s][0], @@matrix[value.to_s][1], @@matrix[value.to_s][2])
+		srm_color = @@matrix[value.to_s]
+		return false unless srm_color
+
+		BubbleWrap.rgb_color(srm_color[0], srm_color[1], srm_color[2])
 	end
 
 	def self.cgcolor(value)
@@ -46,6 +49,8 @@ class SRM
 	def self.imageWithSRM(value, andSize:size)
 		# size expects a CGSize
     color = SRM.color(value)
+
+    size = CGSizeMake(size, size) if size.is_a?(Integer)
 
     rect = CGRectMake(0.0, 0.0, size.width, size.height)
     UIGraphicsBeginImageContext(rect.size)
