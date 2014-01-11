@@ -29,15 +29,17 @@ class AppDelegate < ProMotion::Delegate
     flavor_wheel = FlavorWheel.new nav_bar: true
     off_flavors = OffFlavorsScreen.new nav_bar: true
     srm = SRM.new nav_bar: true
+    analyzer = SRMAnalyzer.new nav_bar: true
+
     about_vc = AboutViewController.alloc.init
     about = UINavigationController.alloc.initWithRootViewController(about_vc)
 
-    if Device.camera.rear? || Device.simulator?
-      analyzer = SRMAnalyzer.new nav_bar: true
-      @nav_stack = open_tab_bar flavor_wheel, off_flavors, srm, analyzer, about
-    else
-      @nav_stack = open_tab_bar flavor_wheel, off_flavors, srm, about
-    end
+    vcs = [flavor_wheel, off_flavors, srm]
+    vcs << analyzer if Device.camera.rear? || Device.simulator?
+    vcs << about unless Device.ipad?
+
+    @nav_stack = open_tab_bar vcs
+
   end
 
   def application(application, openURL:url, sourceApplication:sourceApplication, annotation:annotation)
