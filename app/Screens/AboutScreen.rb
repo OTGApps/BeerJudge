@@ -71,6 +71,13 @@ class AboutViewController < Formotion::FormController
           placeholder: "#{copyright_year}, Mohawk Apps, LLC",
           selection_style: :none
         }, {
+          title: "Flavor Wheel",
+          type: :disabled_text,
+          font: { name: 'HelveticaNeue', size: 14 },
+          placeholder: "Courtesy of beerflavorwheel.com",
+          selection_style: :none,
+          row_height: 60
+        }, {
           title: "Visit MohawkApps.com",
           type: :web_link,
           warn: false,
