@@ -16,6 +16,7 @@ Motion::Project::App.setup do |app|
   app.version = "4"
   app.short_version = "1.2.0"
   app.frameworks += %w(AVFoundation CoreVideo CoreMedia ImageIO QuartzCore)
+  app.icons = Dir.glob("resources/Icon*.png").map{|icon| icon.split("/").last}
   app.prerendered_icon = true
   app.info_plist['APP_STORE_ID'] = 666120064
   app.info_plist['CFBundleURLTypes'] = [
