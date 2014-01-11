@@ -1,25 +1,102 @@
-class AboutScreen < PM::WebScreen
+class AboutViewController < Formotion::FormController
 
-  title "About"
-  tab_bar_item icon: "tab_info", title: "About"
+  def viewDidLoad
+    super
+    self.title = "About #{App.name}"
+    self.tabBarItem.setTitle("About")
+    self.tabBarItem.setImage(UIImage.imageNamed('tab_info'))
 
-  def content
-    "AboutScreen.html"
-  end
-
-  def on_load
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack
-  end
-
-  def will_appear
     Flurry.logEvent "AboutView" unless Device.simulator?
   end
 
-  def should_autorotate
-    true
+  def init
+    @form ||= Formotion::Form.new({
+      sections: [{
+        title: "Tell Your friends:",
+        rows: [{
+          title: "Share the app",
+          subtitle: "Text, Email, Tweet, or Facebook!",
+          type: :share,
+          image: "share",
+          value: {
+            items: "I'm using the #{App.name} app to send cool text art. Check it out! http://www.mohawkapps.com/app/textables/",
+            excluded: [
+              UIActivityTypeAddToReadingList,
+              UIActivityTypeAirDrop,
+              UIActivityTypeCopyToPasteboard,
+              UIActivityTypePrint
+            ]
+          }
+        },{
+          title: "Rate on iTunes",
+          type: :rate_itunes,
+          image: "itunes"
+        }]
+      }, {
+        title: "#{App.name} is open source:",
+        rows: [{
+          title: "View on GitHub",
+          type: :github_link,
+          image: "github",
+          warn: true,
+          value: "https://github.com/MohawkApps/BeerJudge"
+        }, {
+          title: "Found a bug?",
+          subtitle: "Log it here.",
+          type: :issue_link,
+          image: "issue",
+          warn: true,
+          value: "https://github.com/MohawkApps/BeerJudge/issues/"
+        }, {
+          title: "Email me suggestions!",
+          subtitle: "I'd love to hear from you",
+          type: :email_me,
+          image: "email",
+          value: {
+            to: "mark@mohawkapps.com",
+            subject: "#{App.name} App Feedback"
+          }
+        }]
+      }, {
+        title: "About #{App.name}:",
+        rows: [{
+          title: "Version",
+          type: :static,
+          placeholder: App.info_plist['CFBundleShortVersionString'],
+          selection_style: :none
+        }, {
+          title: "Copyright",
+          type: :static,
+          font: { name: 'HelveticaNeue', size: 13 },
+          placeholder: "#{copyright_year}, Mohawk Apps, LLC",
+          selection_style: :none
+        }, {
+          title: "Visit MohawkApps.com",
+          type: :web_link,
+          warn: false,
+          value: "http://www.mohawkapps.com"
+        }, {
+          title: "Made with ♥ in North Carolina",
+          type: :static,
+          enabled: false,
+          selection_style: :none,
+          text_alignment: NSTextAlignmentCenter
+        },{
+          type: :static_image,
+          value: "nc",
+          enabled: false,
+          selection_style: :none
+        }]
+      }]
+    })
+    super.initWithForm(@form)
   end
 
-  def supported_orientations
-    UIInterfaceOrientationMaskPortrait
+  def copyright_year
+    start_year = '2013'
+    this_year = Time.now.year
+
+    start_year == this_year ? this_year : "#{start_year}-#{this_year}"
   end
+
 end

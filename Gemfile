@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
 # Cocoapods
-gem "motion-cocoapods", '~> 1.3.0'
+gem "motion-cocoapods"
 gem "cocoapods"
 
 # RubyMotion
-gem 'bubble-wrap', :git => 'https://github.com/rubymotion/BubbleWrap', :require => ['bubble-wrap/core']
-# gem 'ProMotion', :git => 'git://github.com/clearsightstudio/ProMotion.git'
-gem 'ProMotion', :path => "../ProMotion/"
+gem 'bubble-wrap', :git => 'https://github.com/rubymotion/BubbleWrap', :require => ['bubble-wrap/core', 'bubble-wrap/mail']
+gem "ProMotion", github: "clearsightstudio/ProMotion", branch: "edge"
+gem 'formotion', :github => 'markrickert/formotion', :branch => 'texties'
 
 # Rubygems
 gem "rake", '>= 0.9.4'

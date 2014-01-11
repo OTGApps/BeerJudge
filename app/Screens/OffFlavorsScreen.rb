@@ -3,10 +3,6 @@ class OffFlavorsScreen < ProMotion::TableScreen
   tab_bar_item icon: "tab_bandaid", title: "Off Flavors"
   searchable
 
-  def on_load
-    self.navigationController.navigationBar.barStyle = self.navigationController.toolbar.barStyle = UIBarStyleBlack
-  end
-
   def will_appear
     @will_appear_done ||= begin
       table_view.tableHeaderView.tintColor = UIColor.blackColor

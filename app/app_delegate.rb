@@ -1,5 +1,7 @@
 class AppDelegate < ProMotion::Delegate
 
+  tint_color "#581A27".to_color
+
   def on_load(app, options)
     # 3rd Party integrations
     unless Device.simulator?
@@ -27,7 +29,8 @@ class AppDelegate < ProMotion::Delegate
     flavor_wheel = FlavorWheel.new nav_bar: true
     off_flavors = OffFlavorsScreen.new nav_bar: true
     srm = SRM.new nav_bar: true
-    about = AboutScreen.new nav_bar: true, external_links:true
+    about_vc = AboutViewController.alloc.init
+    about = UINavigationController.alloc.initWithRootViewController(about_vc)
 
     if Device.camera.rear? || Device.simulator?
       analyzer = SRMAnalyzer.new nav_bar: true

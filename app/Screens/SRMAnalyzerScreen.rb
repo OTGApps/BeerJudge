@@ -6,7 +6,9 @@ class SRMAnalyzer < PM::Screen
   attr_accessor :live_preview, :still_image_output, :captured_image_preview
 
   def on_load
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack
+    self.navigationController.navigationBar.translucent = false
+    self.automaticallyAdjustsScrollViewInsets = false
+    self.edgesForExtendedLayout = UIRectEdgeNone
   end
 
   def will_appear

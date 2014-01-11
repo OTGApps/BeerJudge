@@ -8,13 +8,13 @@ Bundler.require
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'BeerJudge'
-  app.deployment_target = "6.0"
+  app.name = 'Beer Judge'
+  app.deployment_target = "7.0"
   app.device_family = [:iphone, :ipad]
   app.interface_orientations = [:portrait, :portrait_upside_down]
   app.identifier = 'com.mohawkapps.BeerJudge'
-  app.version = "3"
-  app.short_version = "1.1.0"
+  app.version = "4"
+  app.short_version = "1.2.0"
   app.frameworks += %w(AVFoundation CoreVideo CoreMedia ImageIO QuartzCore)
   app.prerendered_icon = true
   app.info_plist['APP_STORE_ID'] = 666120064

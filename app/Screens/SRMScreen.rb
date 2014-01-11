@@ -4,7 +4,9 @@ class SRM < PM::Screen
   tab_bar_item icon: "tab_srm_spectrum", title: "SRM"
 
   def on_load
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack
+    self.navigationController.navigationBar.translucent = false
+    self.automaticallyAdjustsScrollViewInsets = false
+    self.edgesForExtendedLayout = UIRectEdgeNone
   end
 
   def will_appear
