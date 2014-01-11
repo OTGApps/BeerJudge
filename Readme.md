@@ -15,7 +15,7 @@ This app is the perfect companion for you at beer competitions!
 
 ## Screenshots
 
-![Screenshot 1](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/1.png)&nbsp;![Screenshot 2](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/2.png)&nbsp;![Screenshot 3](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/3.png)&nbsp;![Screenshot 4](https://raw.github.com/MohawkApps/BeerJudge/master/marketing/screenshots/1.0.0/small/4.png)
+<a href="https://raw.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/1.png"><img src="https://raw.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/1.png" alt="Screenshot" width="140" /></a> <a href="https://raw.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/2.png"><img src="https://raw.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/2.png" alt="Screenshot" width="140" /></a> <a href="https://raw.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/3.png"><img src="https://raw.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/3.png" alt="Screenshot" width="140" /></a> <a href="https://raw.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/4.png"><img src="https://raw.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/4.png" alt="Screenshot" width="140"  /></a> <a href="https://raw.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/5.png"><img src="https://raw.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/5.png" alt="Screenshot" width="140" /></a>
 
 ## How to run the app:
 
@@ -31,6 +31,3 @@ This app is the perfect companion for you at beer competitions!
 3. Send me a pull request.
 
 *I also like it when people who can't contribute [open an issue](https://github.com/markrickert/BeerJudge/issues)*
-
----
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/MohawkApps/beerjudge/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
