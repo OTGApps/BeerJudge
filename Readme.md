@@ -11,7 +11,7 @@ This app is the perfect companion for you at beer competitions!
 
 *SRM Analysis tool requires a device with camera capability.*
 
-[![image](http://ax.phobos.apple.com.edgesuite.net/images/web/linkmaker/badge_appstore-lrg.gif)](https://itunes.apple.com/us/app/beer-judge/id666120064?mt=8&uo=4&at=10l4yY)
+[![image](http://ax.phobos.apple.com.edgesuite.net/images/web/linkmaker/badge_appstore-lrg.gif)](https://itunes.apple.com/us/app/beer-judge/id666120064?mt=8&uo=4&at=10l4yY&ct=beerjudge-github)
 
 ## Screenshots
 
