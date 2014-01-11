@@ -23,7 +23,7 @@ class SRMAnalyzer < MasterScreen
       view.setBackgroundColor UIColor.whiteColor
 
       #Live Preview video screen setup
-      video_ratio = 1.333333333333
+      video_ratio = 4.0/3.0
       self.live_preview = add UIView.new, {
         left: 0,
         top: 0,
