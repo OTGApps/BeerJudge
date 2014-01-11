@@ -1,4 +1,4 @@
-class SRM < PM::Screen
+class SRMScreen < MasterScreen
 
   title "SRM Spectrum"
   tab_bar_item icon: "tab_srm_spectrum", title: "SRM"

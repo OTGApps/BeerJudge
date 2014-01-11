@@ -28,7 +28,7 @@ class AppDelegate < ProMotion::Delegate
 
     flavor_wheel = FlavorWheel.new nav_bar: true
     off_flavors = OffFlavorsScreen.new nav_bar: true
-    srm = SRM.new nav_bar: true
+    srm = SRMScreen.new nav_bar: true
     analyzer = SRMAnalyzer.new nav_bar: true
 
     about_vc = AboutViewController.alloc.init
