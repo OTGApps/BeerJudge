@@ -4,7 +4,7 @@ class AboutViewController < Formotion::FormController
     super
     self.title = "About #{App.name}"
     self.tabBarItem.setTitle("About")
-    self.tabBarItem.setImage(UIImage.imageNamed('tab_info'))
+    self.tabBarItem.setImage(UIImage.imageNamed('tab_about'))
 
     Flurry.logEvent "AboutView" unless Device.simulator?
   end
