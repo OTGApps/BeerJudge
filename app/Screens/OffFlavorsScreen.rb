@@ -3,10 +3,6 @@ class OffFlavorsScreen < MasterTableScreen
   tab_bar_item icon: "tab_bandaid", title: "Off Flavors"
   searchable
 
-  def on_load
-    super
-  end
-
   def will_appear
     @will_appear_done ||= begin
       table_view.tableHeaderView.tintColor = UIColor.blackColor
@@ -14,10 +10,14 @@ class OffFlavorsScreen < MasterTableScreen
   end
 
   def on_appear
-    self.navigationController.setToolbarHidden(true, animated:true) unless searching?
+    hide_toolbar
   end
 
   def stopped_searching
+    hide_toolbar
+  end
+
+  def hide_toolbar
     self.navigationController.setToolbarHidden(true, animated:false)
   end
 
