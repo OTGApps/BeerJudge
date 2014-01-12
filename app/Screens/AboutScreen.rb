@@ -76,11 +76,13 @@ class AboutViewController < Formotion::FormController
           selection_style: :none
         }, {
           title: "Flavor Wheel",
-          type: :disabled_text,
-          font: { name: 'HelveticaNeue', size: 14 },
+          type: Device.ipad? ? :static : :text,
+          editable: false,
+          font: { name: 'HelveticaNeue', size: 13 },
           placeholder: "Courtesy of beerflavorwheel.com",
           selection_style: :none,
-          row_height: 60
+          text_alignment: NSTextAlignmentRight,
+          row_height: Device.ipad? ? nil : 60
         }, {
           title: "Visit MohawkApps.com",
           type: :web_link,
