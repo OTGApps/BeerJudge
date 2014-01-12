@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: git://github.com/markrickert/formotion.git
-  revision: 30e32cbde07350ce723c2485578e89e3fc8ed421
+  revision: 317dd32bfcc4b78638111b629486abe211460c29
   branch: texties
   specs:
     formotion (1.6)
