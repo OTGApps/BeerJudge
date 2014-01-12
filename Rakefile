@@ -13,7 +13,7 @@ Motion::Project::App.setup do |app|
   app.device_family = [:iphone, :ipad]
   app.interface_orientations = [:portrait, :portrait_upside_down]
   app.identifier = 'com.mohawkapps.BeerJudge'
-  app.version = "4"
+  app.version = "5"
   app.short_version = "1.2.0"
   app.frameworks += %w(AVFoundation CoreVideo CoreMedia ImageIO QuartzCore)
   app.icons = Dir.glob("resources/Icon*.png").map{|icon| icon.split("/").last}
@@ -29,7 +29,6 @@ Motion::Project::App.setup do |app|
     pod 'FlurrySDK'
     pod 'Appirater'
     pod 'Harpy'
-    pod 'OpenInChrome'
     pod 'CMPopTipView', :podspec => 'vendor/specs/CMPopTip.podspec'
   end
 
