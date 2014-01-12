@@ -23,7 +23,7 @@ class AboutViewController < Formotion::FormController
           type: :share,
           image: "share",
           value: {
-            items: "I'm using the #{App.name} app to send cool text art. Check it out! http://www.mohawkapps.com/app/textables/",
+            items: "I'm using the #{App.name} app. Check it out! http://www.mohawkapps.com/app/beerjudge/",
             excluded: [
               UIActivityTypeAddToReadingList,
               UIActivityTypeAirDrop,
