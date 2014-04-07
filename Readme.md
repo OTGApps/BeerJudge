@@ -1,7 +1,7 @@
 # Beer Judge
 ### A [RubyMotion](http://www.rubymotion.com/) application brought to you by [Mohawk Apps](http://www.mohawkapps.com/).
 
-![App Icon](https://raw2.github.com/MohawkApps/BeerJudge/master/resources/Icon@2x.png)
+![App Icon](resources/Icon@2x.png)
 
 This app is the perfect companion for you at beer competitions! 
 
@@ -15,7 +15,7 @@ This app is the perfect companion for you at beer competitions!
 
 ## Screenshots
 
-<a href="https://raw2.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/1.png"><img src="https://raw2.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/1.png" alt="Screenshot" width="140" /></a> <a href="https://raw2.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/2.png"><img src="https://raw2.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/2.png" alt="Screenshot" width="140" /></a> <a href="https://raw2.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/3.png"><img src="https://raw2.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/3.png" alt="Screenshot" width="140" /></a> <a href="https://raw2.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/4.png"><img src="https://raw2.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/4.png" alt="Screenshot" width="140"  /></a> <a href="https://raw2.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/5.png"><img src="https://raw2.github.com/MohawkApps/BeerJudge/master/_marketing/screenshots/1.2.0/iPhone4/5.png" alt="Screenshot" width="140" /></a>
+<a href="_marketing/screenshots/1.2.0/iPhone4/1.png"><img src="_marketing/screenshots/1.2.0/iPhone4/1.png" alt="Screenshot" width="140" /></a> <a href="_marketing/screenshots/1.2.0/iPhone4/2.png"><img src="_marketing/screenshots/1.2.0/iPhone4/2.png" alt="Screenshot" width="140" /></a> <a href="_marketing/screenshots/1.2.0/iPhone4/3.png"><img src="_marketing/screenshots/1.2.0/iPhone4/3.png" alt="Screenshot" width="140" /></a> <a href="_marketing/screenshots/1.2.0/iPhone4/4.png"><img src="_marketing/screenshots/1.2.0/iPhone4/4.png" alt="Screenshot" width="140"  /></a> <a href="_marketing/screenshots/1.2.0/iPhone4/5.png"><img src="_marketing/screenshots/1.2.0/iPhone4/5.png" alt="Screenshot" width="140" /></a>
 
 ## How to run the app:
 
