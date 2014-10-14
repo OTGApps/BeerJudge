@@ -36,7 +36,7 @@ Motion::Project::App.setup do |app|
     pod 'FlurrySDK'
     pod 'Appirater'
     pod 'Harpy'
-    pod 'CMPopTipView', :podspec => 'vendor/specs/CMPopTip.podspec'
+    pod 'CMPopTipView'
   end
 
   # Vendor Projects - ARC
