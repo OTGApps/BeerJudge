@@ -51,15 +51,6 @@ class AboutViewController < Formotion::FormController
           image: "issue",
           warn: true,
           value: "https://github.com/MohawkApps/BeerJudge/issues/"
-        }, {
-          title: "Email me suggestions!",
-          subtitle: "I'd love to hear from you",
-          type: :email_me,
-          image: "email",
-          value: {
-            to: "mark@mohawkapps.com",
-            subject: "#{App.name} App Feedback"
-          }
         }]
       }, {
         title: "About #{App.name}:",
