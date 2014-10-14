@@ -28,13 +28,12 @@ class AppDelegate < ProMotion::Delegate
     srm = SRMScreen.new nav_bar: true
     analyzer = SRMAnalyzer.new nav_bar: true
 
-    about_vc = AboutViewController.alloc.init
-    self.about = UINavigationController.alloc.initWithRootViewController(about_vc)
-    self.about.modalPresentationStyle = UIModalPresentationFormSheet
+    about_screen = AboutScreen.new nav_bar:true
+    # self.about.modalPresentationStyle = UIModalPresentationFormSheet
 
     vcs = [flavor_wheel, off_flavors, srm]
     vcs << analyzer if Device.camera.rear? || Device.simulator?
-    vcs << about unless Device.ipad?
+    vcs << about_screen unless Device.ipad?
 
     @nav_stack = open_tab_bar vcs
     @tab_bar.delegate = self

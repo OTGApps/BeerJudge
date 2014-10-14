@@ -12,6 +12,13 @@ GIT
     bubble-wrap (1.7.1)
       bubble-wrap-http (= 1.7.1)
 
+PATH
+  remote: ../ProMotion-form
+  specs:
+    ProMotion-form (0.2.1)
+      ProMotion (~> 2.0)
+      motion-cocoapods (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -49,9 +56,6 @@ GEM
     cocoapods-try (0.4.1)
     colored (1.2)
     escape (0.0.4)
-    formotion (1.8)
-      bubble-wrap (>= 1.4.0)
-      motion-require (>= 0.1.0)
     fuzzy_match (2.0.4)
     i18n (0.6.11)
     json_pure (1.8.1)
@@ -59,7 +63,6 @@ GEM
       bundler
     motion-cocoapods (1.6.0)
       cocoapods (>= 0.34)
-    motion-require (0.2.0)
     motion_print (0.0.3)
     multi_json (1.10.1)
     nap (0.8.0)
@@ -76,9 +79,9 @@ PLATFORMS
 
 DEPENDENCIES
   ProMotion!
+  ProMotion-form!
   bubble-wrap!
   cocoapods
-  formotion
   motion-cocoapods
   motion_print
   rake (>= 0.9.4)

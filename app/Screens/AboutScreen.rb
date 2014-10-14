@@ -1,88 +1,97 @@
-class AboutViewController < Formotion::FormController
+class AboutScreen < PM::TableScreen
+  title "About Beer Judge"
+  tab_bar_item item: "tab_about", title: "About"
 
-  def viewDidLoad
-    super
-    self.title = "About #{App.name}"
-    self.tabBarItem.setTitle("About")
-    self.tabBarItem.setImage(UIImage.imageNamed('tab_about'))
-
-    if Device.ipad?
-      self.navigationItem.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemStop, target:self, action:"close")
-    end
-
+  def will_appear
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemStop, target:self, action:"close") if Device.ipad?
     Flurry.logEvent "AboutView" unless Device.simulator?
   end
 
-  def init
-    @form ||= Formotion::Form.new({
-      sections: [{
-        title: "Tell Your friends:",
-        rows: [{
-          title: "Share the app",
-          subtitle: "Text, Email, Tweet, or Facebook!",
-          type: :share,
-          image: "share",
-          value: {
-            items: "I'm using the #{App.name} app. Check it out! http://www.mohawkapps.com/app/beerjudge/",
-            excluded: [
-              UIActivityTypeAddToReadingList,
-              UIActivityTypeAirDrop,
-              UIActivityTypeCopyToPasteboard,
-              UIActivityTypePrint
-            ]
-          }
-        },{
-          title: "Rate on iTunes",
-          type: :rate_itunes,
-          image: "itunes"
-        }]
-      }, {
-        title: "#{App.name} is open source:",
-        rows: [{
-          title: "View on GitHub",
-          type: :github_link,
-          image: "github",
-          warn: true,
-          value: "https://github.com/MohawkApps/BeerJudge"
-        }, {
-          title: "Found a bug?",
-          subtitle: "Log it here.",
-          type: :issue_link,
-          image: "issue",
-          warn: true,
-          value: "https://github.com/MohawkApps/BeerJudge/issues/"
-        }]
-      }, {
-        title: "About #{App.name}:",
-        rows: [{
-          title: "Version",
-          type: :static,
-          placeholder: App.info_plist['CFBundleShortVersionString'],
-          selection_style: :none
-        }, {
-          title: "Copyright",
-          type: :static,
-          font: { name: 'HelveticaNeue', size: 13 },
-          placeholder: "#{copyright_year} Mohawk Apps, LLC",
-          selection_style: :none
-        }, {
-          title: "Flavor Wheel",
-          type: Device.ipad? ? :static : :text,
-          editable: false,
-          font: { name: 'HelveticaNeue', size: 13 },
-          placeholder: "Courtesy of beerflavorwheel.com",
-          selection_style: :none,
-          text_alignment: NSTextAlignmentRight,
-          row_height: Device.ipad? ? nil : 60
-        }, {
-          title: "Visit MohawkApps.com",
-          type: :web_link,
-          warn: false,
-          value: "http://www.mohawkapps.com"
-        }]
+  def table_data
+    [{
+      title: "Tell Your friends:",
+      cells: [{
+        title: "Share the app",
+        subtitle: "Text, Email, Tweet, or Facebook!",
+        action: :share_app,
+        image: "share",
+      },{
+        title: "Rate on iTunes",
+        action: :rate_itunes,
+        image: "itunes"
       }]
-    })
-    super.initWithForm(@form)
+    }, {
+      title: "#{App.name} is open source:",
+      cells: [{
+        title: "View on GitHub",
+        action: :launch_github,
+        image: "github"
+      }, {
+        title: "Found a bug?",
+        subtitle: "Log it here.",
+        action: :launch_bug,
+        image: "issue"
+      }]
+    }, {
+      title: "About #{App.name}:",
+      cells: [{
+        title: "Version",
+        subtitle: App.info_plist['CFBundleShortVersionString'],
+      }, {
+        title: "Copyright",
+        subtitle: "#{copyright_year} Mohawk Apps, LLC",
+      }, {
+        title: "Flavor Wheel",
+        subtitle: "Courtesy of beerflavorwheel.com",
+      }, {
+        title: "Visit MohawkApps.com",
+        action: :launch_mohawk
+      }]
+    }]
+  end
+
+  def launch_bug
+    Flurry.logEvent("GITHUB_ISSUE_TAPPED") unless Device.simulator?
+    open_url('https://github.com/MohawkApps/BeerJudge/issues/')
+  end
+
+  def launch_github
+    Flurry.logEvent("GITHUB_TAPPED") unless Device.simulator?
+    open_url('https://github.com/MohawkApps/BeerJudge')
+  end
+
+  def launch_mohawk
+    Flurry.logEvent("WEBSITE_TAPPED") unless Device.simulator?
+    open_url('http://www.mohawkapps.com')
+  end
+
+  def open_url(url)
+    App.open_url url
+  end
+
+  def rate_itunes
+    Appirater.rateApp
+    Flurry.logEvent("RATE_ITUNES_TAPPED") unless Device.simulator?
+  end
+
+  def share_app
+    Flurry.logEvent("SHARE_TAPPED") unless Device.simulator?
+    BW::UIActivityViewController.new(
+      items: "I'm using the #{App.name} app. Check it out! http://www.mohawkapps.com/app/beerjudge/",
+      animated: true,
+      excluded: [
+        :add_to_reading_list,
+        :air_drop,
+        :copy_to_pasteboard,
+        :print
+      ]
+    ) do |activity_type, completed|
+      if completed
+        Flurry.logEvent("SHARE_COMPLETED_#{activity_type.to_s.upcase}") unless Device.simulator?
+      else
+        Flurry.logEvent("SHARE_CANCELED") unless Device.simulator?
+      end
+    end
   end
 
   def copyright_year
