@@ -41,7 +41,11 @@ class AppDelegate < ProMotion::Delegate
     vcs << about unless Device.ipad?
 
     @nav_stack = open_tab_bar vcs
+    @tab_bar.delegate = self
+  end
 
+  def tabBar(tabBar, didSelectItem:item)
+    puts item.title
   end
 
   def application(application, openURL:url, sourceApplication:sourceApplication, annotation:annotation)

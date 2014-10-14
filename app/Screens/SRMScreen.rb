@@ -1,7 +1,6 @@
 class SRMScreen < MasterScreen
-
   title "SRM Spectrum"
-  tab_bar_item icon: "tab_srm_spectrum", title: "SRM"
+  tab_bar_item item: "tab_srm_spectrum", title: "SRM"
 
   def on_load
     super

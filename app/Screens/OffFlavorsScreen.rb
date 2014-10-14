@@ -1,6 +1,6 @@
 class OffFlavorsScreen < MasterTableScreen
   title "Common Off Flavors"
-  tab_bar_item icon: "tab_bandaid", title: "Off Flavors"
+  tab_bar_item item: "tab_bandaid", title: "Off Flavors"
   searchable
 
   def will_appear

@@ -72,7 +72,7 @@ class AboutViewController < Formotion::FormController
           title: "Copyright",
           type: :static,
           font: { name: 'HelveticaNeue', size: 13 },
-          placeholder: "#{copyright_year}, Mohawk Apps, LLC",
+          placeholder: "#{copyright_year} Mohawk Apps, LLC",
           selection_style: :none
         }, {
           title: "Flavor Wheel",
@@ -88,17 +88,6 @@ class AboutViewController < Formotion::FormController
           type: :web_link,
           warn: false,
           value: "http://www.mohawkapps.com"
-        }, {
-          title: "Made with ♥ in North Carolina",
-          type: :static,
-          enabled: false,
-          selection_style: :none,
-          text_alignment: NSTextAlignmentCenter
-        },{
-          type: :static_image,
-          value: "nc",
-          enabled: false,
-          selection_style: :none
         }]
       }]
     })
