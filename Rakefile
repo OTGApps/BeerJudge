@@ -35,7 +35,6 @@ Motion::Project::App.setup do |app|
   app.pods do
     pod 'FlurrySDK'
     pod 'Appirater'
-    pod 'Harpy'
     pod 'CMPopTipView'
   end
 

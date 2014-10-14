@@ -18,10 +18,6 @@ class AppDelegate < ProMotion::Delegate
       Appirater.setUsesUntilPrompt 10
       Appirater.setTimeBeforeReminding 5
       Appirater.appLaunched true
-
-      # Harpy
-      Harpy.sharedInstance.setAppID app_id
-      Harpy.sharedInstance.checkVersion
     end
 
     # Set initial font size (%)
