@@ -5,12 +5,13 @@ gem "motion-cocoapods"
 gem "cocoapods"
 
 # RubyMotion
-gem 'bubble-wrap', :git => 'https://github.com/rubymotion/BubbleWrap', :require => ['bubble-wrap/core', 'bubble-wrap/mail']
-gem 'ProMotion', github: 'clearsightstudio/ProMotion', branch: 'edge'
-gem 'formotion', :github => 'markrickert/formotion', :branch => 'texties'
+gem 'bubble-wrap', :github => 'rubymotion/BubbleWrap', :require => ['bubble-wrap/core', 'bubble-wrap/mail']
+gem 'ProMotion', github: 'clearsightstudio/ProMotion'
+gem 'formotion'
 
 # Rubygems
 gem 'rake', '>= 0.9.4'
 
 # Development
-gem 'awesome_print_motion'
+gem 'motion_print'
+gem 'reset-sim'
