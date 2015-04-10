@@ -1,5 +1,5 @@
 # Beer Judge
-### A [RubyMotion](http://www.rubymotion.com/) application brought to you by [Mohawk Apps](http://www.mohawkapps.com/).
+### A [RubyMotion](http://www.rubymotion.com/) application brought to you by [Off The Grid Apps](http://otgapps.io/).
 
 ![App Icon](resources/Icon@2x.png)
 
