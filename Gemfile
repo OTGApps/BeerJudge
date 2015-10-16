@@ -5,9 +5,8 @@ gem "motion-cocoapods"
 gem "cocoapods"
 
 # RubyMotion
-gem 'bubble-wrap'
+gem 'bubble-wrap', "~> 1.9.4"
 gem 'ProMotion', github: 'clearsightstudio/ProMotion'
-gem 'ProMotion-form', path: '../ProMotion-form'
 
 # Rubygems
 gem 'rake', '>= 0.9.4'
