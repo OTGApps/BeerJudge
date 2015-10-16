@@ -5,7 +5,7 @@ gem "motion-cocoapods"
 gem "cocoapods"
 
 # RubyMotion
-gem 'bubble-wrap', :github => 'rubymotion/BubbleWrap', :require => ['bubble-wrap/core']
+gem 'bubble-wrap'
 gem 'ProMotion', github: 'clearsightstudio/ProMotion'
 gem 'ProMotion-form', path: '../ProMotion-form'
 
