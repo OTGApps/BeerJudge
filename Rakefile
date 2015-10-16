@@ -25,7 +25,7 @@ Motion::Project::App.setup do |app|
 
   app.info_plist['APP_STORE_ID'] = 666120064
   app.info_plist['CFBundleURLTypes'] = [
-    { 'CFBundleURLName' => 'com.mohawkapps.BeerJudge',
+    { 'CFBundleURLName' => app.identifier,
       'CFBundleURLSchemes' => ['beerjudge'] }
   ]
   app.info_plist['UIRequiredDeviceCapabilities'] = ['still-camera']

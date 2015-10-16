@@ -39,30 +39,30 @@ class AboutScreen < PM::TableScreen
         subtitle: App.info_plist['CFBundleShortVersionString'],
       }, {
         title: "Copyright",
-        subtitle: "#{copyright_year} Mohawk Apps, LLC",
+        subtitle: "#{copyright_year} Off The Grid Apps, LLC",
       }, {
         title: "Flavor Wheel",
         subtitle: "Courtesy of beerflavorwheel.com",
       }, {
-        title: "Visit MohawkApps.com",
-        action: :launch_mohawk
+        title: "Visit OTGApps.io",
+        action: :launch_otg
       }]
     }]
   end
 
   def launch_bug
     Flurry.logEvent("GITHUB_ISSUE_TAPPED") unless Device.simulator?
-    open_url('https://github.com/MohawkApps/BeerJudge/issues/')
+    open_url('https://github.com/OTGApps/BeerJudge/issues/')
   end
 
   def launch_github
     Flurry.logEvent("GITHUB_TAPPED") unless Device.simulator?
-    open_url('https://github.com/MohawkApps/BeerJudge')
+    open_url('https://github.com/OTGApps/BeerJudge')
   end
 
-  def launch_mohawk
+  def launch_otg
     Flurry.logEvent("WEBSITE_TAPPED") unless Device.simulator?
-    open_url('http://www.mohawkapps.com')
+    open_url('http://www.otgapps.io')
   end
 
   def open_url(url)
@@ -77,7 +77,7 @@ class AboutScreen < PM::TableScreen
   def share_app
     Flurry.logEvent("SHARE_TAPPED") unless Device.simulator?
     BW::UIActivityViewController.new(
-      items: "I'm using the #{App.name} app. Check it out! http://www.mohawkapps.com/app/beerjudge/",
+      items: "I'm using the #{App.name} app. Check it out! http://www.otgapps.io/#beer-judge",
       animated: true,
       excluded: [
         :add_to_reading_list,
