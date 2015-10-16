@@ -73,9 +73,13 @@ class SRM
 	end
 
 	def self.spectrum
+		SRM.ui_spectrum.map{|c| c.CGColor }
+	end
+
+	def self.ui_spectrum
 		colors = []
 		@@matrix.each do |key, value|
-			colors << BubbleWrap.rgb_color(value[0], value[1], value[2].to_f).CGColor
+			colors << BubbleWrap.rgb_color(value[0], value[1], value[2].to_f)
 		end
 		colors
 	end

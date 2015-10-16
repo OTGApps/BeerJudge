@@ -1,62 +1,31 @@
 class SRMScreen < MasterScreen
   title "SRM Spectrum"
   tab_bar_item item: "tab_srm_spectrum", title: "SRM"
+  stylesheet SRMScreenStylesheet
 
   def on_load
     super
     self.navigationController.navigationBar.translucent = false
     self.automaticallyAdjustsScrollViewInsets = false
     self.edgesForExtendedLayout = UIRectEdgeNone
+
+    append(UIView, :gradient_view)
+    append(UIView, :top_view)
+    append(UILabel, :top_view_label)
   end
 
   def will_appear
-    @view_loaded ||= begin
-      # view.setBackgroundColor UIColor.redColor
-      @top_view_height = 44
-
-      @srm_views ||= []
-      height = self.view.frame.size.height - @top_view_height
-
-      @gradient_view = add UIView.new, {
-        left: 0,
-        top: @top_view_height,
-        width: self.view.frame.size.width,
-        height: height,
-      }
-      @gradient_view.setBackgroundColor UIColor.whiteColor
-
-      @gradient = CAGradientLayer.layer
-      @gradient.frame = view.bounds
-      @gradient.colors = SRM.spectrum
-
-      @gradient_view.layer.insertSublayer(@gradient, atIndex:0)
-
-      @gradient_view.when_panned do |gesture|
-        got_touch_point gesture.locationInView(@gradient_view)
-      end
-
-      @gradient_view.when_tapped do |gesture|
-        got_touch_point gesture.locationInView(@gradient_view)
-      end
-
-      # Add a top view that changes color.
-      @top_view = add UIView.new, {
-        left: 0,
-        top: 0,
-        width: view.frame.size.width,
-        height: @top_view_height,
-        background_color: UIColor.whiteColor
-      }
-      @top_view_label = add UILabel.new, {
-        frame: @top_view.frame,
-        text: "Touch Below!",
-        font: UIFont.boldSystemFontOfSize(UIFont.systemFontSize),
-        textAlignment: UITextAlignmentCenter,
-        background_color: UIColor.clearColor
-      }
-
+    find(:gradient_view).on(:pan) do |view, event|
+      got_touch_point(event.location)
+    end.on(:tap) do |view, event|
+      got_touch_point(event.location)
     end
+
     Flurry.logEvent "SRMView" unless Device.simulator?
+  end
+
+  def will_disappear
+    find(:gradient_view).off
   end
 
   def got_touch_point(cgpoint)
@@ -77,16 +46,16 @@ class SRMScreen < MasterScreen
     @indicators_initialized ||= begin
 
       #Hide the "touch me" label
-      @top_view_label.hidden = true
+      find(:top_view_label).hide
 
-      @srm_indicator = set_attributes CMPopTipView.alloc.initWithTitle("SRM:", message:""), {
-        delegate: nil,
-        titleAlignment: UITextAlignmentCenter,
-        textAlignment: UITextAlignmentCenter,
-        preferredPointDirection: PointDirectionDown,
-        userInteractionEnabled: false
-      }
-      @srm_indicator.disableTapToDismiss = true
+      @srm_indicator = CMPopTipView.alloc.initWithTitle("SRM:", message:"").tap do |ptv|
+        ptv.delegate = nil
+        ptv.titleAlignment = UITextAlignmentCenter
+        ptv.textAlignment = UITextAlignmentCenter
+        ptv.preferredPointDirection = PointDirectionDown
+        ptv.userInteractionEnabled = false
+        ptv.disableTapToDismiss = true
+      end
 
       @target_tap_view = add UIView.new
     end
@@ -105,10 +74,10 @@ class SRMScreen < MasterScreen
       borderColor: text_border_color
     }
 
-    @target_tap_view.frame = CGRectMake(cgpoint.x, cgpoint.y + @top_view_height - 5, 1, 1)
+    @target_tap_view.frame = CGRectMake(cgpoint.x, cgpoint.y + 44 - 5, 1, 1)
 
     @srm_indicator.presentPointingAtView(@target_tap_view, inView:view, animated:false)
-    @top_view.backgroundColor = SRM.color(srm)
+    find(:top_view).style{|st| st.background_color = SRM.color(srm) }
   end
 
   def should_autorotate
