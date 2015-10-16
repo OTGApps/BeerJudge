@@ -22,7 +22,7 @@
  */
 
 #import "UIImage+ImageColoring.h"
-// #import "CoreGraphicsAdditions.h"
+#import "CoreGraphicsAdditions.h"
 
 static inline unsigned long RGBToUInt32(int r, int g, int b, int a) {
 	return (a << 24) | (b << 16) | (g << 8) | r;
