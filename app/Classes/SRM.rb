@@ -1,3 +1,6 @@
+# Better colors for next version:
+# http://www.homebrewtalk.com/f84/ebc-srm-color-rgb-78018/
+
 class SRM
 
 	# Colors extracted from http://methodbrewery.com/srm.php
