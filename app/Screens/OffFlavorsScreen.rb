@@ -3,6 +3,10 @@ class OffFlavorsScreen < MasterTableScreen
   tab_bar_item item: "tab_bandaid", title: "Off Flavors"
   searchable
 
+  def on_load
+    set_nav_bar_button :back, title: ""
+  end
+
   def will_appear
     @will_appear_done ||= begin
       table_view.tableHeaderView.tintColor = UIColor.blackColor
