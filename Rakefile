@@ -14,7 +14,6 @@ Motion::Project::App.setup do |app|
   app.short_version = "1.2.0"
   app.version = (`git rev-list HEAD --count`.strip.to_i).to_s
 
-  app.sdk_version = "8.1"
   app.deployment_target = "7.1"
   app.frameworks += %w(AVFoundation CoreVideo CoreMedia ImageIO QuartzCore)
 
@@ -23,7 +22,6 @@ Motion::Project::App.setup do |app|
 
   app.device_family = [:iphone, :ipad]
   app.interface_orientations = [:portrait, :portrait_upside_down]
-
 
   app.info_plist['APP_STORE_ID'] = 666120064
   app.info_plist['CFBundleURLTypes'] = [
