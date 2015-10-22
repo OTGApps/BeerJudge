@@ -29,6 +29,7 @@ Motion::Project::App.setup do |app|
       'CFBundleURLSchemes' => ['beerjudge'] }
   ]
   app.info_plist['UIRequiredDeviceCapabilities'] = ['still-camera']
+  app.info_plist['UIRequiresFullScreen'] = true
 
   app.pods do
     pod 'CrittercismSDK', '~> 5.2.0'
