@@ -1,4 +1,6 @@
-class OffFlavorsScreen < MasterTableScreen
+class OffFlavorsScreen < PM::TableScreen
+  include ModalModule
+
   title "Common Off Flavors"
   tab_bar_item item: "tab_bandaid", title: "Off Flavors"
   searchable

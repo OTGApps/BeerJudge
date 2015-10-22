@@ -1,4 +1,6 @@
-class SRMAnalyzer < MasterScreen
+class SRMAnalyzer < PM::Screen
+  include ModalModule
+
   title "SRM Analyzer"
   tab_bar_item item: "tab_eyedropper", title: "Analyzer"
   stylesheet SRMAnalyzerScreenStylesheet

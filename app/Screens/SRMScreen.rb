@@ -1,4 +1,6 @@
-class SRMScreen < MasterScreen
+class SRMScreen < PM::Screen
+  include ModalModule
+
   title "SRM Spectrum"
   tab_bar_item item: "tab_srm_spectrum", title: "SRM"
   stylesheet SRMScreenStylesheet

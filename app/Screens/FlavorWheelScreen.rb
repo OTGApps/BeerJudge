@@ -1,4 +1,5 @@
-class FlavorWheel < MasterScreen
+class FlavorWheel < PM::Screen
+  include ModalModule
 
   title "Flavor Wheel"
   tab_bar_item item: "tab_flavor_wheel", title: "Flavor Wheel"
