@@ -39,7 +39,7 @@ class SRMAnalyzerScreenStylesheet < ApplicationStylesheet
       h: gradient_view_size
     }
     st.content_mode = :scale_aspect_fit
-    st.background_color = color.random
+    st.background_color = color.white
   end
 
   def average_color(st)
@@ -50,7 +50,7 @@ class SRMAnalyzerScreenStylesheet < ApplicationStylesheet
       width: device_width - gradient_view_size,
       height: gradient_view_size,
     }
-    st.background_color = color.random
+    st.background_color = color.white
   end
 
   def target_area(st)
