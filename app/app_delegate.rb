@@ -8,9 +8,9 @@ class AppDelegate < ProMotion::Delegate
     unless Device.simulator?
       app_id = App.info_plist['APP_STORE_ID']
 
-      # Flurry
-      NSSetUncaughtExceptionHandler("uncaughtExceptionHandler")
-      Flurry.startSession("3W88Z2Q6MR87NHGDSMVV")
+      # Crittercism Debugging on devices
+      crittercism_app_id = "562939d78d4d8c0a00d07f0f"
+      Crittercism.enableWithAppID(crittercism_app_id)
 
       # Appirater
       Appirater.setAppId app_id
@@ -61,13 +61,8 @@ class AppDelegate < ProMotion::Delegate
     true
   end
 
-  #Flurry exception handler
-  def uncaughtExceptionHandler(exception)
-    Flurry.logError("Uncaught", message:"Crash!", exception:exception)
-  end
-
   def applicationWillEnterForeground(application)
-    Appirater.appEnteredForeground true unless Device.simulator?
+    Appirater.appEnteredForeground(true) unless Device.simulator?
   end
 
 end

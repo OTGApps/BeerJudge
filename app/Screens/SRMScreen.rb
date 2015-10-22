@@ -21,7 +21,7 @@ class SRMScreen < MasterScreen
       got_touch_point(event.location)
     end
 
-    Flurry.logEvent "SRMView" unless Device.simulator?
+    Crittercism.leaveBreadcrumb("SRMView") unless Device.simulator?
   end
 
   def will_disappear

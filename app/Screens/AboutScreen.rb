@@ -4,7 +4,7 @@ class AboutScreen < PM::TableScreen
 
   def will_appear
     self.navigationItem.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemStop, target:self, action:"close") if Device.ipad?
-    Flurry.logEvent "AboutView" unless Device.simulator?
+    Crittercism.leaveBreadcrumb("AboutView") unless Device.simulator?
   end
 
   def table_data
@@ -51,17 +51,17 @@ class AboutScreen < PM::TableScreen
   end
 
   def launch_bug
-    Flurry.logEvent("GITHUB_ISSUE_TAPPED") unless Device.simulator?
+    Crittercism.leaveBreadcrumb("GITHUB_ISSUE_TAPPED") unless Device.simulator?
     open_url('https://github.com/OTGApps/BeerJudge/issues/')
   end
 
   def launch_github
-    Flurry.logEvent("GITHUB_TAPPED") unless Device.simulator?
+    Crittercism.leaveBreadcrumb("GITHUB_TAPPED") unless Device.simulator?
     open_url('https://github.com/OTGApps/BeerJudge')
   end
 
   def launch_otg
-    Flurry.logEvent("WEBSITE_TAPPED") unless Device.simulator?
+    Crittercism.leaveBreadcrumb("WEBSITE_TAPPED") unless Device.simulator?
     open_url('http://www.otgapps.io')
   end
 
@@ -71,11 +71,11 @@ class AboutScreen < PM::TableScreen
 
   def rate_itunes
     Appirater.rateApp
-    Flurry.logEvent("RATE_ITUNES_TAPPED") unless Device.simulator?
+    Crittercism.leaveBreadcrumb("RATE_ITUNES_TAPPED") unless Device.simulator?
   end
 
   def share_app
-    Flurry.logEvent("SHARE_TAPPED") unless Device.simulator?
+    Crittercism.leaveBreadcrumb("SHARE_TAPPED") unless Device.simulator?
     BW::UIActivityViewController.new(
       items: "I'm using the #{App.name} app. Check it out! http://www.otgapps.io/#beer-judge",
       animated: true,
@@ -87,9 +87,9 @@ class AboutScreen < PM::TableScreen
       ]
     ) do |activity_type, completed|
       if completed
-        Flurry.logEvent("SHARE_COMPLETED_#{activity_type.to_s.upcase}") unless Device.simulator?
+        Crittercism.leaveBreadcrumb("SHARE_COMPLETED_#{activity_type.to_s.upcase}") unless Device.simulator?
       else
-        Flurry.logEvent("SHARE_CANCELED") unless Device.simulator?
+        Crittercism.leaveBreadcrumb("SHARE_CANCELED") unless Device.simulator?
       end
     end
   end

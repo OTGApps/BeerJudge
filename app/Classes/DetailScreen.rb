@@ -3,8 +3,7 @@ class DetailScreen < SizeableWebScreen
 
   def on_appear
     super
-    flurry_params = {off_flavor: self.title}
-    Flurry.logEvent("OffFlavorViewed", withParameters:flurry_params) unless Device.simulator?
+    Crittercism.leaveBreadcrumb("OffFlavorViewed - #{self.title}")
   end
 
   def content

@@ -23,7 +23,7 @@ class FlavorWheel < MasterScreen
       @wheel.addGestureRecognizer(rotateGesture)
 
     end
-    Flurry.logEvent "FlavorWheelView" unless Device.simulator?
+    Crittercism.leaveBreadcrumb("FlavorWheelView") unless Device.simulator?
   end
 
   def rotating(recognizer)

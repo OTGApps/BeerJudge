@@ -31,7 +31,7 @@ Motion::Project::App.setup do |app|
   app.info_plist['UIRequiredDeviceCapabilities'] = ['still-camera']
 
   app.pods do
-    pod 'FlurrySDK'
+    pod 'CrittercismSDK', '~> 5.2.0'
     pod 'Appirater'
     pod 'CMPopTipView'
   end
@@ -50,7 +50,7 @@ Motion::Project::App.setup do |app|
   app.development do
     app.entitlements['get-task-allow'] = true
     app.codesign_certificate = "iPhone Developer: Mark Rickert (YA2VZGDX4S)"
-    app.provisioning_profile = "./provisioning/WildcardDevelopment.mobileprovision"
+    app.provisioning_profile = "./provisioning/development.mobileprovision"
   end
 
   app.release do

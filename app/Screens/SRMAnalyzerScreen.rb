@@ -144,7 +144,7 @@ class SRMAnalyzer < MasterScreen
         background_color: UIColor.clearColor
       }
 
-    Flurry.logEvent "AnalyzerView" unless Device.simulator?
+    Crittercism.leaveBreadcrumb("AnalyzerView") unless Device.simulator?
     end
   end
 
@@ -206,7 +206,7 @@ class SRMAnalyzer < MasterScreen
         match[:good_match] = false
       end
 
-      Flurry.logEvent("AnalyzerImageCaptured", withParameters:exif_attachments.merge(match)) unless Device.simulator?
+      Crittercism.leaveBreadcrumb("AnalyzerImageCaptured") unless Device.simulator?
 
      end)
   end
