@@ -12,6 +12,12 @@ class SizeableWebScreen < PM::WebScreen
       target: self,
       action: :increase_size)
 
+    fixed_space = UIBarButtonItem.alloc.initWithBarButtonSystemItem(
+      UIBarButtonSystemItemFixedSpace,
+      target:nil,
+      action:nil)
+    fixed_space.width = 20
+
     decrease_size = UIBarButtonItem.alloc.initWithTitle(
       "a",
       style: UIBarButtonItemStyleBordered,
@@ -20,7 +26,7 @@ class SizeableWebScreen < PM::WebScreen
 
     toolbar_animated = Device.ipad? ? false : true
     self.navigationController.setToolbarHidden(false, animated:toolbar_animated)
-    self.toolbarItems = [flexible_space, decrease_size, increase_size]
+    self.toolbarItems = [flexible_space, decrease_size, fixed_space, increase_size, fixed_space]
   end
 
   def load_finished
