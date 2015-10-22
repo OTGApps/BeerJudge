@@ -11,7 +11,7 @@ Motion::Project::App.setup do |app|
   app.name = 'Beer Judge'
   app.identifier = 'com.mohawkapps.BeerJudge'
 
-  app.short_version = "1.2.0"
+  app.short_version = "1.3.0"
   app.version = (`git rev-list HEAD --count`.strip.to_i).to_s
 
   app.deployment_target = "7.1"
