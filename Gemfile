@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Cocoapods
-gem "motion-cocoapods"
+gem "motion-cocoapods", "~> 1.8.0"
 gem "cocoapods"
 
 # RubyMotion
