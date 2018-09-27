@@ -35,10 +35,11 @@ Motion::Project::App.setup do |app|
     pod 'CrittercismSDK'
     pod 'Appirater'
     pod 'CMPopTipView'
+    pod 'CKImageAdditions', :git => 'https://github.com/cmkilger/CKImageAdditions.git'
   end
 
   # Vendor Projects - ARC
-  %w(KTOneFingerRotationGestureRecognizer CKImageAdditions).each do |v|
+  %w(KTOneFingerRotationGestureRecognizer).each do |v|
     app.vendor_project("vendor/#{v}", :static, :cflags => '-fobjc-arc')
   end
   # Vendor Projects - non-ARC
