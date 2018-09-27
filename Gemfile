@@ -1,13 +1,12 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Cocoapods
-gem "motion-cocoapods", "~> 1.8.0"
-gem "cocoapods"
+gem "motion-cocoapods"
 
 # RubyMotion
-gem 'bubble-wrap', "~> 1.9.4"
-# gem 'ProMotion', github: 'clearsightstudio/ProMotion'
-gem 'redpotion'
+gem 'bubble-wrap', "~> 1.9.6"
+gem 'redpotion', github: 'infinitered/redpotion'
+gem 'ProMotion', github: 'infinitered/ProMotion'
 
 # Rubygems
 gem 'rake', '>= 0.9.4'
@@ -15,3 +14,4 @@ gem 'rake', '>= 0.9.4'
 # Development
 gem 'motion_print'
 gem 'reset-sim'
+gem 'motion-provisioning'
