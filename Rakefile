@@ -31,6 +31,7 @@ Motion::Project::App.setup do |app|
   ]
   app.info_plist['UIRequiredDeviceCapabilities'] = ['still-camera']
   app.info_plist['UIRequiresFullScreen'] = true
+  app.info_plist['NSCameraUsageDescription'] = 'We use your camera to estimate beer colors'
 
   app.pods do
     pod 'CMPopTipView'
