@@ -66,11 +66,7 @@ class SRMAnalyzer < PM::Screen
 
     # Create the button
     @capture_button = append!(UIButton, :capture_button).on(:tap){ captureNow }
-
     @color_view_label = append!(UILabel, :color_view_label)
-
-    Crittercism.leaveBreadcrumb("AnalyzerView") unless Device.simulator?
-
   end
 
   def will_appear
@@ -136,9 +132,6 @@ class SRMAnalyzer < PM::Screen
         }
         match[:good_match] = false
       end
-
-      Crittercism.leaveBreadcrumb("AnalyzerImageCaptured") unless Device.simulator?
-
      end)
   end
 

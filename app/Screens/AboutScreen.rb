@@ -4,7 +4,6 @@ class AboutScreen < PM::TableScreen
 
   def will_appear
     self.navigationItem.rightBarButtonItem = UIBarButtonItem.alloc.initWithBarButtonSystemItem(UIBarButtonSystemItemStop, target:self, action:"close") if Device.ipad?
-    Crittercism.leaveBreadcrumb("AboutView") unless Device.simulator?
   end
 
   def table_data
@@ -47,17 +46,14 @@ class AboutScreen < PM::TableScreen
   end
 
   def launch_bug
-    Crittercism.leaveBreadcrumb("GITHUB_ISSUE_TAPPED") unless Device.simulator?
     open_url('https://github.com/OTGApps/BeerJudge/issues/')
   end
 
   def launch_github
-    Crittercism.leaveBreadcrumb("GITHUB_TAPPED") unless Device.simulator?
     open_url('https://github.com/OTGApps/BeerJudge')
   end
 
   def launch_otg
-    Crittercism.leaveBreadcrumb("WEBSITE_TAPPED") unless Device.simulator?
     open_url('http://www.otgapps.io')
   end
 
@@ -66,7 +62,6 @@ class AboutScreen < PM::TableScreen
   end
 
   def share_app
-    Crittercism.leaveBreadcrumb("SHARE_TAPPED") unless Device.simulator?
     BW::UIActivityViewController.new(
       items: "I'm using the #{App.name} app. Check it out! http://www.otgapps.io/#beer-judge",
       animated: true,
@@ -77,11 +72,7 @@ class AboutScreen < PM::TableScreen
         :print
       ]
     ) do |activity_type, completed|
-      if completed
-        Crittercism.leaveBreadcrumb("SHARE_COMPLETED_#{activity_type.to_s.upcase}") unless Device.simulator?
-      else
-        Crittercism.leaveBreadcrumb("SHARE_CANCELED") unless Device.simulator?
-      end
+      # Nothing to see here... please move along
     end
   end
 

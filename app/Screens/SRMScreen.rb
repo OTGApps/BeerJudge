@@ -22,8 +22,6 @@ class SRMScreen < PM::Screen
     end.on(:tap) do |view, event|
       got_touch_point(event.location)
     end
-
-    Crittercism.leaveBreadcrumb("SRMView") unless Device.simulator?
   end
 
   def will_disappear

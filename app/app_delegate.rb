@@ -4,15 +4,6 @@ class AppDelegate < ProMotion::Delegate
   tint_color "#581A27".to_color
 
   def on_load(app, options)
-    # 3rd Party integrations
-    unless Device.simulator?
-      app_id = App.info_plist['APP_STORE_ID']
-
-      # Crittercism Debugging on devices
-      crittercism_app_id = "562939d78d4d8c0a00d07f0f"
-      Crittercism.enableWithAppID(crittercism_app_id)
-    end
-
     # Set initial font size (%)
     App::Persistence['font_size'] = 100 if App::Persistence['font_size'].nil?
 

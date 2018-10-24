@@ -13,7 +13,6 @@ class FlavorWheel < PM::Screen
 
   def will_appear
     @rotation_deg = 0
-    Crittercism.leaveBreadcrumb("FlavorWheelView") unless Device.simulator?
   end
 
   def rotating(recognizer)

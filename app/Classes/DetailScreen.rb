@@ -1,11 +1,6 @@
 class DetailScreen < SizeableWebScreen
   attr_accessor :description, :search_string
 
-  def on_appear
-    super
-    Crittercism.leaveBreadcrumb("OffFlavorViewed - #{self.title}")
-  end
-
   def content
 <<-CONTENT
 #{css}
