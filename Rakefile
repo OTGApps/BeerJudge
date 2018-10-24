@@ -10,12 +10,12 @@ rescue LoadError
 end
 
 Motion::Project::App.setup do |app|
-  # Use `rake config' to see complete project settings.
-  app.name = 'Beer Judge'
   define_icon_defaults!(app)
+
+  app.name = 'BeerJudge'
   app.identifier = 'com.mohawkapps.BeerJudge'
 
-  app.short_version = "1.3.2"
+  app.short_version = "1.4.0"
   app.version = (`git rev-list HEAD --count`.strip.to_i).to_s
 
   app.deployment_target = "9.3"
@@ -38,12 +38,15 @@ Motion::Project::App.setup do |app|
     pod 'CKImageAdditions', :git => 'https://github.com/cmkilger/CKImageAdditions.git'
   end
 
+  # app.info_plist['UIRequiresFullScreen'] = true
+  # app.info_plist['ITSAppUsesNonExemptEncryption'] = false
+
   # Vendor Projects - ARC
   %w(KTOneFingerRotationGestureRecognizer).each do |v|
     app.vendor_project("vendor/#{v}", :static, :cflags => '-fobjc-arc')
   end
   # Vendor Projects - non-ARC
-  %w(CaptureSessionManager UIColor-Utilities).each do |v|
+  %w(UIColor-Utilities).each do |v|
     app.vendor_project("vendor/#{v}", :static)
   end
 
@@ -53,15 +56,15 @@ Motion::Project::App.setup do |app|
   app.development do
     app.entitlements['get-task-allow'] = true
 
-    # app.codesign_certificate = MotionProvisioning.certificate(
-    #   type: :development,
-    #   platform: :ios)
+    app.codesign_certificate = MotionProvisioning.certificate(
+      type: :development,
+      platform: :ios)
 
-    # app.provisioning_profile = MotionProvisioning.profile(
-    #   bundle_identifier: app.identifier,
-    #   app_name: app.name,
-    #   platform: :ios,
-    #   type: :development)
+    app.provisioning_profile = MotionProvisioning.profile(
+      bundle_identifier: app.identifier,
+      app_name: app.name,
+      platform: :ios,
+      type: :development)
   end
 
   app.release do
@@ -81,10 +84,6 @@ Motion::Project::App.setup do |app|
 end
 
 def define_icon_defaults!(app)
-  # This is required as of iOS 11.0 (you must use asset catalogs to
-  # define icons or your app will be rejected. More information in
-  # located in the readme.
-
   app.info_plist['CFBundleIcons'] = {
     'CFBundlePrimaryIcon' => {
       'CFBundleIconName' => 'AppIcon',
