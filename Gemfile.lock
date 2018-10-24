@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/infinitered/ProMotion.git
-  revision: 736a7c3ab42d06932625fe615ec457a7a93321da
-  specs:
-    ProMotion (2.8.0)
-      methadone (~> 1.7)
-      motion_print (~> 1.0)
-
-GIT
   remote: git://github.com/infinitered/redpotion.git
   revision: aa8e28747ca94c764e6912f240892f38b04735ec
   specs:
@@ -17,6 +9,13 @@ GIT
       motion_print
       rake
       ruby_motion_query (>= 1.7.0)
+
+PATH
+  remote: ../ProMotion
+  specs:
+    ProMotion (2.8.0)
+      methadone (~> 1.7)
+      motion_print (~> 1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -59,7 +58,7 @@ GEM
       fuzzy_match (~> 2.0.4)
       nap (~> 1.0)
     cocoapods-deintegrate (1.0.2)
-    cocoapods-downloader (1.2.1)
+    cocoapods-downloader (1.2.2)
     cocoapods-plugins (1.0.0)
       nap
     cocoapods-search (1.0.0)
@@ -89,7 +88,7 @@ GEM
     faraday_middleware (0.12.2)
       faraday (>= 0.7.4, < 1.0)
     fastimage (2.1.4)
-    fastlane (2.105.2)
+    fastlane (2.107.0)
       CFPropertyList (>= 2.3, < 4.0.0)
       addressable (>= 2.3, < 3.0.0)
       babosa (>= 1.0.2, < 2.0.0)
@@ -136,10 +135,10 @@ GEM
       representable (~> 3.0)
       retriable (>= 2.0, < 4.0)
       signet (~> 0.9)
-    googleauth (0.6.6)
+    googleauth (0.6.7)
       faraday (~> 0.12)
       jwt (>= 1.4, < 3.0)
-      memoist (~> 0.12)
+      memoist (~> 0.16)
       multi_json (~> 1.11)
       os (>= 0.9, < 2.0)
       signet (~> 0.7)
@@ -184,11 +183,11 @@ GEM
     reset-sim (1.1.1)
     retriable (3.1.2)
     rouge (2.0.7)
-    ruby-macho (1.2.0)
+    ruby-macho (1.3.1)
     ruby_motion_query (1.7.0)
     rubyzip (1.2.2)
     security (0.1.3)
-    signet (0.10.0)
+    signet (0.11.0)
       addressable (~> 2.3)
       faraday (~> 0.9)
       jwt (>= 1.5, < 3.0)
@@ -213,7 +212,7 @@ GEM
     unf_ext (0.0.7.5)
     unicode-display_width (1.4.0)
     word_wrap (1.0.0)
-    xcodeproj (1.6.0)
+    xcodeproj (1.7.0)
       CFPropertyList (>= 2.3.3, < 4.0)
       atomos (~> 0.1.3)
       claide (>= 1.0.2, < 2.0)
