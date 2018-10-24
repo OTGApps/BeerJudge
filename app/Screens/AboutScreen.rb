@@ -15,10 +15,6 @@ class AboutScreen < PM::TableScreen
         subtitle: "Text, Email, Tweet, or Facebook!",
         action: :share_app,
         image: "share",
-      },{
-        title: "Rate on iTunes",
-        action: :rate_itunes,
-        image: "itunes"
       }]
     }, {
       title: "#{App.name} is open source:",
@@ -67,11 +63,6 @@ class AboutScreen < PM::TableScreen
 
   def open_url(url)
     App.open_url url
-  end
-
-  def rate_itunes
-    Appirater.rateApp
-    Crittercism.leaveBreadcrumb("RATE_ITUNES_TAPPED") unless Device.simulator?
   end
 
   def share_app

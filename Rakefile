@@ -34,7 +34,6 @@ Motion::Project::App.setup do |app|
 
   app.pods do
     pod 'CrittercismSDK'
-    pod 'Appirater'
     pod 'CMPopTipView'
     pod 'CKImageAdditions', :git => 'https://github.com/cmkilger/CKImageAdditions.git'
   end

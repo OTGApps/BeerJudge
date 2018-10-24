@@ -11,13 +11,6 @@ class AppDelegate < ProMotion::Delegate
       # Crittercism Debugging on devices
       crittercism_app_id = "562939d78d4d8c0a00d07f0f"
       Crittercism.enableWithAppID(crittercism_app_id)
-
-      # Appirater
-      Appirater.setAppId app_id
-      Appirater.setDaysUntilPrompt 5
-      Appirater.setUsesUntilPrompt 10
-      Appirater.setTimeBeforeReminding 5
-      Appirater.appLaunched true
     end
 
     # Set initial font size (%)
@@ -59,10 +52,6 @@ class AppDelegate < ProMotion::Delegate
     end
 
     true
-  end
-
-  def applicationWillEnterForeground(application)
-    Appirater.appEnteredForeground(true) unless Device.simulator?
   end
 
 end
