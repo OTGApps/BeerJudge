@@ -12,6 +12,7 @@ end
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'Beer Judge'
+  define_icon_defaults!(app)
   app.identifier = 'com.mohawkapps.BeerJudge'
 
   app.short_version = "1.3.2"
@@ -78,5 +79,24 @@ Motion::Project::App.setup do |app|
       platform: :ios,
       type: :distribution)
   end
+end
 
+def define_icon_defaults!(app)
+  # This is required as of iOS 11.0 (you must use asset catalogs to
+  # define icons or your app will be rejected. More information in
+  # located in the readme.
+
+  app.info_plist['CFBundleIcons'] = {
+    'CFBundlePrimaryIcon' => {
+      'CFBundleIconName' => 'AppIcon',
+      'CFBundleIconFiles' => ['AppIcon60x60']
+    }
+  }
+
+  app.info_plist['CFBundleIcons~ipad'] = {
+    'CFBundlePrimaryIcon' => {
+      'CFBundleIconName' => 'AppIcon',
+      'CFBundleIconFiles' => ['AppIcon60x60', 'AppIcon76x76']
+    }
+  }
 end
