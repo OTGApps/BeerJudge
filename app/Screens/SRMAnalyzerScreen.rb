@@ -19,7 +19,7 @@ class SRMAnalyzer < PM::Screen
 
     # Camera View Setup
     @session = AVCaptureSession.alloc.init
-    @session.sessionPreset = AVCaptureSessionPresetLow
+    @session.sessionPreset = AVCaptureSessionPresetMedium
 
     captureVideoPreviewLayer = set_attributes AVCaptureVideoPreviewLayer.alloc.initWithSession(@session), {
       frame: self.live_preview.frame,
@@ -93,7 +93,6 @@ class SRMAnalyzer < PM::Screen
       break if videoConnection
     end
 
-    NSLog("about to request a capture from: %@", still_image_output)
     still_image_output.captureStillImageAsynchronouslyFromConnection(videoConnection, completionHandler:lambda do |imageSampleBuffer, error|
       exif_attachments = CMGetAttachment( imageSampleBuffer, KCGImagePropertyExifDictionary, nil) || {}
 
