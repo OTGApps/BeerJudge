@@ -11,7 +11,7 @@ class OffFlavorsScreen < PM::TableScreen
 
   def will_appear
     @will_appear_done ||= begin
-      table_view.tableHeaderView.tintColor = UIColor.blackColor
+      table_view.tableHeaderView.tintColor = UIColor.blackColor if table_view.tableHeaderView
     end
   end
 
@@ -70,7 +70,7 @@ class OffFlavorsScreen < PM::TableScreen
     c
   end
 
-  def tapped_cell(args={})
+  def tapped_cell(args)
     open_args = args
     open_args = args.merge({search_string: search_string}) if searching?
     open DetailScreen.new(open_args)
