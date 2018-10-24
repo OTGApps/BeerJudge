@@ -72,7 +72,7 @@ class OffFlavorsScreen < PM::TableScreen
 
   def tapped_cell(args)
     open_args = args
-    open_args = args.merge({search_string: search_string}) if searching?
+    open_args = args.merge({search_string: search_string}) if searching? && search_string
     open DetailScreen.new(open_args)
   end
 
