@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 # Cocoapods
-gem 'motion-cocoapods'
+gem 'motion-cocoapods', '~> 1.8.0'
 
 # RubyMotion
 gem 'bubble-wrap', "~> 1.9.6"
